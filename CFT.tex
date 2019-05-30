@@ -1,0 +1,152 @@
+\documentclass[10pt]{article}
+
+% Preamble
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[mathscr]{euscript}
+%\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{bbm}
+\usepackage{braket}
+\usepackage{tikz-feynman}
+\usepackage{simpler-wick}
+\usepackage{cancel}
+\usepackage{stackengine}
+\usepackage{slashed}
+\usepackage{caption}
+\usepackage{pgfplots}
+
+\newcommand{\bigzero}{\mbox{\normalfont\Large\bfseries 0}}
+
+\title{Notes On Introduction to Conformal Field Theory \\ A Course Given By Dr. Tobias Osborne}
+\author{Transcribed by Dr. Alexander V. St. John}
+
+% The Document
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\section*{Lecture 1: Introduction to Conformal Field Theory}
+\label{sec: lec1}
+
+\noindent Recommended references:
+
+\begin{itemize}
+\item \textit{A Mathematical Introduction to Conformal Field Theory} by Schottenloher.
+\item \textit{Applied Conformal Field Theory}, hep-th/9108028, by Ginsparg.
+\item \textit{Conformal Field Theory} (``Yellow Book'') by Francesco, Mathieu, Senechal.
+\end{itemize}
+
+\noindent Why study conformal field theory (CFT)?
+
+\begin{itemize}
+\item CFT provides a good description of systems at or near criticality.
+\item CFTs are the only true quantum field theories (QFTs), since they are cutoff-independent. One can think of QFTs as perturbations of CFTs. CFTs correspond to renormalization groups of fixed points, which dominate an effective theory at or near criticality.
+\item CFTs can be made, by and large, mathematically rigorous, at least in $(1+1)$-dimensional theories. There are three major competing mathematical descriptions for CFT, and advances are being made towards a single, unifying description.
+\end{itemize}
+
+\noindent Prerequisites for this material:
+
+\begin{itemize}
+\item Advanced quantum mechanics
+	\subitem E.g, many-body theory and Fock spaces.
+\item Classical field theory
+	\subitem E.g., symplectic geometry.
+\item Quantum field theory.
+\item Advanced quantum field theory.
+\end{itemize}
+
+\noindent What is CFT?
+
+\begin{itemize}
+\item A \textit{conformal field theory} is a field theory, quantum or classical, that is invariant, or symmetric, under a group of transformations called the \textit{conformal group} $G$.
+\item In a classical field theory, this means that the equations of motion are left invariant.
+\item In a quantum field theory, this means that, by Wigner's theorem, there is a projective unitary representation of the group $G$. In other words, symmetries, or transformations, that leave the transition amplitude invariant, are realized, up to a phase, by (anti)unitary operators.
+\end{itemize}
+
+\subsection*{Conformal Transformations in $d$ Dimensions}
+
+\noindent Let $M = \mathbb{R}^{p,q}$ be a manifold $\mathbb{R}^d$, where $d = p+q$, and $p,q \in \mathbb{Z}_{\ge 0}$. To this manifold, assign the metric
+
+\begin{equation}
+g_{\mu\nu} \equiv \eta_{\mu\nu} = \text{diag} (1,1,\dots,1,-1,-1,\dots,-1)
+\end{equation}
+
+\noindent With the first $p$ entries equal to one, and the last $q$ entries equal to minus one. Note that this is not necessarily a Riemannian metric, since the signature can be negative. We have a few cases of interest for this metric
+
+\begin{itemize}
+\item $p=d$ , Riemannian.
+\item $p = d-1$, $q=1$, Lorentz.
+\item $q > 1$, e.g., $q=2$, AdS-CFT correspondence.
+\end{itemize}
+
+\noindent A conformal transformation leaves the metric invariant up to a scale factor. Consider a smooth change of coordinates
+
+\begin{equation}
+x \rightarrow x' = x' (x) \text{ , with } x = (x^1, x^2, \dots, x^p, x^{p+1}, \dots, x^{p+q})
+\end{equation}
+
+\noindent Such that for the metric, as a type-$(2,0)$ tensor,
+
+\begin{equation}
+g_{\mu\nu} (x) \rightarrow g'_{\mu\nu} (x') = \frac{\partial x^\alpha}{\partial x'^\mu} \frac{\partial x^\beta}{\partial x'^\nu} g_{\alpha \beta} (x) \equiv \Omega (x) g_{\mu\nu} (x).
+\end{equation}
+
+\noindent Where $\Omega(x) > 0$ is the (local) scale factor. Note that if the scale factor is zero, then we have a singularity, which we will discuss later. Such a transformation is called \textit{conformal}, and these transformations preserve angles
+
+\begin{equation}
+\angle \theta = \frac{g_{\mu\nu} u^\mu v^\nu}{\sqrt{(g_{\mu\nu} u^\mu v^\nu)^2}}.
+\end{equation}
+
+\noindent The \textit{conformal group} of a manifold M is denoted by $\text{Conf}(M)$, and is the connected component of the group of all conformal transformations of $M$ containing the identity, in a compact, open topology. \\
+
+\noindent So, in a quantum conformal field theory, we are looking for a Hilbert space $\mathcal{H}$ and a projective unitary representation of the group $G$ for \textit{local} QFTs
+
+\begin{equation}
+G \rightarrow \pi (G).
+\end{equation}
+
+\noindent This is unexpectedly difficult, and makes for a very rich field of study, since there is a tension between knowing the unitary representations of symmetries and demanding that the representation is locally implementable. \\
+
+\noindent To classify the conformal group on our chosen manifold $G = \text{Conf} (\mathbb{R}^{p,q})$, consider an infinitesimal conformal transformation on the spacetime coordinates
+
+\begin{equation}
+x^\mu \rightarrow x'^\mu = x^\mu +  \epsilon^\mu (x)
+\end{equation}
+
+\noindent Which acts on the metric, placing constraints on $\epsilon$, as (\textbf{Exercise})
+
+\begin{equation}
+g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) + \mathcal{O} (\epsilon^2).
+\end{equation}
+
+\noindent To satisfy the condition $g'_{\mu\nu} (x') = \Omega(x) g_{\mu\nu} (x)$, we must have that the second term be diagonal, proportional to $\eta_{\mu\nu}$
+
+\begin{equation}
+(\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) \propto \eta_{\mu\nu}.
+\end{equation}
+
+\noindent Calculate the proportionality factor by tracing both sides with $\eta_{\mu\nu}$ to get
+
+\begin{equation}
+\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu = \frac{2}{d} (\partial \cdot \epsilon) \eta_{\mu\nu}.
+\end{equation}
+
+\noindent Comparing this with the metric transformation law, we get that the scale factor $\Omega(x)$ is 
+
+\begin{equation}
+\Omega(x) = 1+\frac{2}{d} (\partial \cdot \epsilon).
+\end{equation}
+
+\noindent From equality of mixed partial derivatives (to third order), it follows that (\textbf{Exercise})
+
+%\input{chapters/lec1.tex}
+
+%\clearpage
+
+\end{document}
