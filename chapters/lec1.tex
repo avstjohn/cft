@@ -83,7 +83,7 @@ g'_{\mu\nu} (x') = \Omega (x') g_{\mu\nu} (x').
 G \rightarrow \pi (G).
 \end{equation}
 
-\noindent This is unexpectedly difficult, and makes for a very rich field of study, since there is a tension between knowing the unitary representations of symmetries and demanding that the representation is locally implementable. \\
+\noindent This is unexpectedly nontrivial, and makes for a very rich field of study, since there is a tension between knowing the unitary representations of symmetries and demanding that the representation is locally implementable. \\
 
 \noindent To classify the conformal group on our chosen manifold $G = \text{Conf} (\mathbb{R}^{p,q})$, consider an infinitesimal conformal (active coordinate) transformation on the spacetime coordinates
 
@@ -91,9 +91,7 @@ G \rightarrow \pi (G).
 x^\mu \rightarrow x'^\mu = x^\mu +  \epsilon^\mu (x)
 \end{equation}
 
-\noindent Which also can act on the metric, since the conformal transformation is a more general, weaker constraint on the spacetime coordinates and the metric space. \\
-
-\noindent The conformal transformation places constraints on $\epsilon$ (\textbf{Exercise})
+\noindent Which must leave the metric invariant up to the scale factor $\Omega(x)$. This places constraints on $\epsilon$ (\textbf{Exercise}) \\
 
 \begin{equation}
 g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) + \mathcal{O} (\epsilon^2).
@@ -106,7 +104,7 @@ g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + (\partial_\mu \epsilon_\nu + \
 \implies (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) &= \text{constant} \cdot \eta_{\mu\nu}
 \end{align}
 
-\noindent Take the trace of each side and solve for the constant
+\noindent Take the trace of each side, set $\mu=\nu$, and solve for the constant
 
 \begin{equation}
 \text{constant} = \frac{2 (\partial \cdot \epsilon)}{d}
@@ -130,7 +128,7 @@ g'_{\mu\nu} = g_{\mu\nu} + \frac{2 (\partial \cdot \epsilon)}{d} g_{\mu\nu}.
 \Omega(x) = 1+\frac{2}{d} (\partial \cdot \epsilon).
 \end{equation}
 
-\noindent Then, expand and equate mixed partial derivatives (to third order), and we get $d^2$ partial differential equations of the form (\textbf{Exercise})
+\noindent Then it follows from $(\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) = \frac{2}{d} (\partial \cdot \epsilon) \eta_{\mu\nu}$ , expanding and equating mixed partial derivatives to third order, and we get $d^2$ partial differential equations of the form (\textbf{Exercise})
 
 \begin{equation}
 (\eta_{\mu\nu} \Box + (d-2) \partial_\mu \partial_\nu) (\partial \cdot \epsilon) = 0
@@ -140,7 +138,7 @@ g'_{\mu\nu} = g_{\mu\nu} + \frac{2 (\partial \cdot \epsilon)}{d} g_{\mu\nu}.
 
 \subsubsection*{Classification of Infinitesimal Conformal Translations for $d>2$}
 
-\noindent By combining the two equations
+\noindent By examining the condition for $\epsilon$ and the $d^2$ equations
 
 \begin{align}
 (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) &= \frac{2}{d} (\partial \cdot \epsilon) \eta_{\mu\nu} \\
@@ -149,7 +147,7 @@ g'_{\mu\nu} = g_{\mu\nu} + \frac{2 (\partial \cdot \epsilon)}{d} g_{\mu\nu}.
 
 \noindent We find that third order derivatives of $\epsilon(x)$ vanish and $\epsilon(x)$ is at most quadratic. \\
 
-\noindent This leaves four types of infinitesimal transformations, via $\epsilon$, allowable in a conformal transformation: one constant, two linear, and one quadratic in spacetime coordinates.
+\noindent This leaves four types of infinitesimal transformations, defined via $\epsilon$, allowable in a conformal transformation: one constant, two linear, and one quadratic in spacetime coordinates.
 
 \begin{enumerate}
 \item Spacetime translations
