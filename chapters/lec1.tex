@@ -49,7 +49,9 @@ g_{\mu\nu} \equiv \eta_{\mu\nu} = \text{diag} (1,1,\dots,1,-1,-1,\dots,-1)
 \item $q > 1$, e.g., $q=2$, AdS-CFT correspondence.
 \end{itemize}
 
-\noindent A conformal transformation leaves the metric invariant up to a scale factor. Consider a smooth change of coordinates
+\noindent A conformal transformation leaves the metric invariant up to a scale factor. \\
+
+\noindent Consider a smooth change of coordinates
 
 \begin{equation}
 x \rightarrow x' = x' (x) \text{ , with } x = (x^1, x^2, \dots, x^p, x^{p+1}, \dots, x^{p+q})
@@ -57,12 +59,17 @@ x \rightarrow x' = x' (x) \text{ , with } x = (x^1, x^2, \dots, x^p, x^{p+1}, \d
 
 \noindent Such that the metric, a type-$(2,0)$ tensor, undergoes an \textit{active coordinate} transformation as
 
-\begin{align}
-g_{\mu\nu} (x) \rightarrow g'_{\mu\nu} (x') &= \frac{\partial x^\alpha}{\partial x'^\mu} \frac{\partial x^\beta}{\partial x'^\nu} g_{\alpha \beta} (x') \\ 
-&= \Omega (x') g_{\mu\nu} (x').
-\end{align}
+\begin{equation}
+g_{\mu\nu} (x) \rightarrow g'_{\mu\nu} (x') \equiv \frac{\partial x^\alpha}{\partial x'^\mu} \frac{\partial x^\beta}{\partial x'^\nu} g_{\alpha \beta} (x') 
+\end{equation}
 
-\noindent Where $\Omega(x') > 0$ is the (local) scale factor. Note that if the scale factor is zero, then we have a singularity, which we will discuss later. Such a transformation is called \textit{conformal}, and these transformations preserve angles
+\noindent And then impose the condition
+
+\begin{equation}
+g'_{\mu\nu} (x') = \Omega (x') g_{\mu\nu} (x').
+\end{equation}
+
+\noindent Where $\Omega(x) > 0$ is the (local) scale factor. Note that if the scale factor is zero, then we have a singularity, which we will discuss later. A transformation that obeys the last line is called \textit{conformal}, and these transformations preserve angles
 
 \begin{equation}
 \angle \theta = \frac{g_{\mu\nu} u^\mu v^\nu}{\sqrt{(g_{\mu\nu} u^\mu v^\nu)^2}}.
@@ -84,13 +91,15 @@ G \rightarrow \pi (G).
 x^\mu \rightarrow x'^\mu = x^\mu +  \epsilon^\mu (x)
 \end{equation}
 
-\noindent Which also can act on the metric, since the conformal transformation is a more general, weaker constraint on the spacetime coordinates and the metric space. The conformal transformation places constraints on $\epsilon$, as (\textbf{Exercise})
+\noindent Which also can act on the metric, since the conformal transformation is a more general, weaker constraint on the spacetime coordinates and the metric space. \\
+
+\noindent The conformal transformation places constraints on $\epsilon$ (\textbf{Exercise})
 
 \begin{equation}
 g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) + \mathcal{O} (\epsilon^2).
 \end{equation}
 
-\noindent To satisfy the constraint placed by conformal invariance on the metric (c.f., $g_{\mu\nu} \rightarrow g'_{\mu\nu} (x') = \Omega(x') g_{\mu\nu} (x')$), as well as the constraint that the conformally transformed metric is still proptional to the diagonal flat spacetime metric $g'_{\mu\nu} \propto \eta_{\mu\nu}$, we must have that the second term be diagonal, proportional to $\eta_{\mu\nu}$
+\noindent To satisfy the constraint placed by conformal invariance on the metric (c.f., $g_{\mu\nu} \rightarrow g'_{\mu\nu} (x') = \Omega(x') g_{\mu\nu} (x')$), as well as the constraint that the conformally transformed metric is still proptional to the diagonal flat spacetime metric $g'_{\mu\nu} \propto \eta_{\mu\nu}$, we must have that the second term is also diagonal, proportional to $\eta_{\mu\nu}$
 
 \begin{align}
 (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) &\propto \eta_{\mu\nu} \\
@@ -109,7 +118,7 @@ g_{\mu\nu} \rightarrow g'_{\mu\nu} = g_{\mu\nu} + (\partial_\mu \epsilon_\nu + \
 g'_{\mu\nu} = g_{\mu\nu} + \frac{2 (\partial \cdot \epsilon)}{d} g_{\mu\nu}.
 \end{equation}
 
-\noindent And for the proportionality relation above, we have
+\noindent And substituting into the proportionality relation from above, we have
 
 \begin{equation}
 (\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu) = \frac{2}{d} (\partial \cdot \epsilon) \eta_{\mu\nu}.
@@ -131,8 +140,6 @@ g'_{\mu\nu} = g_{\mu\nu} + \frac{2 (\partial \cdot \epsilon)}{d} g_{\mu\nu}.
 
 \subsubsection*{Classification of Infinitesimal Conformal Translations for $d>2$}
 
-\noindent Recall that an infinitesimal transformation can be made global via exponentiaion.
-
 \noindent By combining the two equations
 
 \begin{align}
@@ -140,7 +147,9 @@ g'_{\mu\nu} = g_{\mu\nu} + \frac{2 (\partial \cdot \epsilon)}{d} g_{\mu\nu}.
 (\eta_{\mu\nu} \Box + (d-2) \partial_\mu \partial_\nu) (\partial \cdot \epsilon) &= 0
 \end{align}
 
-\noindent We find that third order derivatives of $\epsilon(x)$ vanish and $\epsilon(x)$ is at most quadratic. This leaves four types of infinitesimal transformations, via $\epsilon$, allowable in a conformal transformation: one constant, two linear, and one quadratic in spacetime coordinates.
+\noindent We find that third order derivatives of $\epsilon(x)$ vanish and $\epsilon(x)$ is at most quadratic. \\
+
+\noindent This leaves four types of infinitesimal transformations, via $\epsilon$, allowable in a conformal transformation: one constant, two linear, and one quadratic in spacetime coordinates.
 
 \begin{enumerate}
 \item Spacetime translations
@@ -198,7 +207,7 @@ z = x^1 + i x^2 \text{ and } \bar{z} = x^1 - i x^2.
 \epsilon(z) = \epsilon^1 + i \epsilon^2 \text{ and } \bar{\epsilon}({\bar{z}}) = \epsilon^1 - i \epsilon^2.
 \end{equation}
 
-\noindent Two-dimensional global (exponentiated infinitesimal) conformal transformations correspond to \textit{entire} (no singularities, all invertible), \textit{holomorphic} functions $z \rightarrow f(z)$ with holomorphic inverses $f^{-1} (z)$. The only allowable form for a conformal transformation that corresponds to an entire, holomorphic function is linear in the complex coordinates
+\noindent Two-dimensional global, gotten via exponentiation of an infinitesimal transformation, conformal transformations correspond to \textit{entire} (no singularities, invertible everywhere), \textit{holomorphic} functions $z \rightarrow f(z)$ with holomorphic inverses $f^{-1} (z)$. The only allowable form for a conformal transformation that corresponds to an entire, holomorphic function is linear in the complex coordinates
 
 \begin{equation}
 f(z) = \alpha z + \beta, \text{ where } \alpha, \beta \in \mathbb{C}.
