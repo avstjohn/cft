@@ -1,0 +1,217 @@
+
+\noindent Recall that a scale transformation on a classical field is characterized per field, indexed by $a$, by the scaling dimension $\Delta_a$ in the mapping
+
+\begin{equation}
+\phi_a (x) \rightarrow \lambda^{-\Delta_a} \phi_a (x).
+\end{equation}
+
+\noindent We now make a move to study quantum fields, using the classical limit to check our results. So, suppose we have done all of the hard work of quantization and have a quantum field theory. \\
+
+\noindent \textbf{Digression}: In $(1+1)$ dimensions, some approaches to quantization include
+
+\begin{itemize}
+\item Vertex operator algebras.
+\item (Local) Algebraic QFT
+	\subitem Top-down approach where one attaches an algebra of observables to each point in spacetime and then makes sense of it as a field theory.
+\item Functors from $n$-Categories to Hilbert spaces: $n$Cat $\rightarrow$ Hilb (Segal).
+\end{itemize}
+
+\noindent  \textbf{Digression}: A main assumption of this course is that quantum field theories are a subset of quantum theories, although some schools argue that QFT is done via path integrals, which is not obviously a quantum theory. \\
+
+\noindent The data of a quantum field theory includes
+
+\begin{itemize}
+\item Hilbert space of states $\mathcal{H}$
+\item Projective unitary representation of the conformal group $U(g)$, where $g \in \text{Conf}(\mathbb{R}^{p,q})$
+\item Vacuum (reference) state $\ket{0} \in \mathcal{H}$ \\
+	\\ Invariant, up to a phase, under global symmetries, but not necessarily local symmetries: $U(g) \ket{0} = e^{i \varphi (g)} \ket{0}$. \\
+	\\ If $p+q > 2$, then the global and local (full conformal) symmetries coincide. \\
+	\\ If $p=q=1$, then the local conformal group of transformations (diffeomorphisms of the circle) is much larger than the global conformal group, making the global transformations subgroup of the local transformations. \\
+\item Observables.
+\end{itemize}
+
+\noindent For observables, we demand that we can measure some set of local observables from the set of self-adjoint linear operators on the Hilbert space
+
+\begin{equation}
+A_{j,x} \in L_{\text{self-adjoint}} (\mathcal{H}); \,\, x \in \mathbb{R}^{p,q}; \,\, j \in \text{index set (e.g., particle type)}.
+\end{equation}
+
+\noindent \textbf{Digression}: We concern ourselves with \textit{local} observables, and non-local observables are difficult to imagine. An example of a non-local observable that shows up in gauge theory is the Wilson loop or Wilson line, since they are spread over a nonzero dimensional submanifold of the gauge theory's manifold. \\
+
+\noindent Note that locality is induced by causality, such that if $x-y$ is spacelike, then $A_{j,x}$ and $A_{k,y}$ are jointly observable, $\forall \, j,k \text{ and } x,y$. \\
+
+\subsection*{Quasi-Primary Observables}
+
+\noindent The \textit{quasi-primary} of a field is a subset of local observables $\{ A_{j,x}: \, j \in J, x \in \mathbb{R}^{p,q} \}$ with the additional properties to satisfy the assumed constraints that enforce conformal invariance of the system, denoted here by $\{ \hat{\phi}_k (x): \, k \in K \}$ that transform as
+
+\begin{equation}
+U(g): \,\, \hat{\phi}_k (x) \rightarrow U^\dagger (g) \hat{\phi}_k (x) U(g) = \Big{|} \frac{\partial x'}{\partial x} \Big{|}^{\frac{\Delta_k}{d}} \hat{\phi}_k (x')
+\end{equation}
+
+\noindent Where $x' = gx$, and $g \in \text{Conf}(\mathbb{R}^{p,q})$ is a conformal transformation. \\
+
+\noindent Now we must demonstrate that these assumptions yield nontrivial examples of fields. Rest assured that there are such fields, such as free bosons and free fermions. \\
+
+\noindent By these assumptions, the $n$-point correlation function, which is observable via scattering experiments,  transforms under conformal transformations as
+
+\begin{equation}
+\bra{0} \hat{\phi}_{k_1} (x_1) \dots \hat{\phi}_{k_n} (x_n) \ket{0} = \Big{|} \frac{\partial x_1'}{\partial x_1} \Big{|}^{\frac{\Delta_{k_1}}{d}} \dots \Big{|} \frac{\partial x_n'}{\partial x_n} \Big{|}^{\frac{\Delta_{k_n}}{d}} \bra{0} \hat{\phi}_{k_1} (x'_1) \dots \hat{\phi}_{k_n} (x'_n) \ket{0}.
+\end{equation}
+
+\noindent This equation constrains the structure of the $n$-point correlation functions. To understand these constraints, let's analyze how each type of transformation of the conformal group constrains the invariants. \\
+
+\noindent \textbf{Translations}: For $x_j, x_k \in \mathbb{R}^{p,q}$, $j, k = 1, \dots, n$, the difference $x_j - x_k$ is invariant, and there are $d(n-1)$ such quantities. \\
+
+\noindent \textbf{Rotations}: For spinless objects (in large enough dimension $d$), the length $r_{jk} \equiv |x_j - x_k |$ is invariant, and there are ${n \choose 2}$ such quantities. \\
+
+\noindent \textbf{Dilations}: Under the scale transformations, the length $r_{jk}$ is clearly not invariant, but the ratio $\frac{r_{jk}}{r_{lm}}$ can be invariant. \\
+
+\noindent \textbf{SCTs}: Under special conformal transformations, invariant quantities must be cross ratios of the form $\frac{r_{jk} r_{lm}}{r_{jl} r_{km}}$, since the squared length under SCTs transforms as
+
+\begin{equation}
+|x'_1 - x'_2 |^2 = \frac{|x_1 - x_2 |^2}{(1 + 2 b \cdot x_1 + b^2 x_1^2) (1 + 2 b \cdot x_2 + b^2 x_2^2)}.
+\end{equation}
+
+\subsection*{Two-Point Correlation Functions}
+
+\noindent Consider the classical two-point correlation function, or Green's function, of the quasi-primary fields
+
+\begin{equation}
+G^{(2)} (x_1, x_2) = \bra{0} \phi_1 (x_1) \phi_2 (x_2) \ket{0} = \Big{|} \frac{\partial x_1'}{\partial x_1} \Big{|}^{\frac{\Delta_{k_1}}{d}} \Big{|} \frac{\partial x_2'}{\partial x_2} \Big{|}^{\frac{\Delta_{k_2}}{d}} \bra{0} \hat{\phi}_{k_1} (x'_1) \hat{\phi}_{k_2} (x'_2) \ket{0}.
+\end{equation}
+
+\noindent Exploiting the assumed conformal symmetries of the system, use the fact that the Jacobian for a translation, as well as for a rotation, is equal to one, such that $\Big{|} \frac{\partial x'}{\partial x} \Big{|} = 1$, and, therefore, the Green's function can only depend on the length 
+
+\begin{equation}
+G^{(2)} (x_1, x_2) = f(|x_1 - x_2|) = f(r_{12}).
+\end{equation}
+
+\noindent For a dilation, the Jacobian obeys a scale factor, such that $\Big{|} \frac{\partial x'}{\partial x} \Big{|} = \lambda^{\Delta}$, and the Green's function has the form
+
+\begin{equation}
+G^{(2)} (x_1, x_2) = \lambda^{\Delta_1 + \Delta_2} f(\lambda r_{12}).
+\end{equation}
+
+\noindent To calculate the function that obeys this constraint, expand $f(r_{12}) = \sum_a f_a r_{12}^a$ in a series, noting that $a$ can be a continuous parameter, and compare to the above to get the condition that the coefficients $f_a$ are all zero, except for $a = -\Delta_1 - \Delta_2$. \\
+
+\noindent Therefore, under translations, rotation, and dilations, we find that the Green's function is constrained to the form
+
+\begin{equation}
+G^{(2)} (x_1, x_2) = \frac{f_{-\Delta_1 - \Delta_2}}{r_{12}^{\Delta_1 + \Delta_2}} = \frac{c_{12}}{r_{12}^{\Delta_1 + \Delta_2}}
+\end{equation}
+
+\noindent Where $c_{12}$ is a constant determined by the normalization condition. \\
+
+\noindent So far, we have come to the conclusion that the correlation function must obey a power law, and we now apply the constraints of SCTs to find that the two-point correlation function of quasi-primary fields is zero unless the two fields have the same scaling dimension $\Delta_1 = \Delta_2 = \Delta$ (\textbf{Exercise})
+
+\begin{equation}
+\bra{0} \phi_1 (x_1) \phi_2 (x_2) \ket{0} = \frac{c_{12}}{r_{12}^{2\Delta}}.
+\end{equation}
+
+\noindent This means that if we solve a system and the calculate the two-point correlation function of two fields with different scaling dimensions, $\Delta_1$ and $\Delta_2$, respectively, where $\Delta_1 \ne \Delta_2$, and get a nonzero result, then our system is not conformally invariant under the full global conformal group, but under a subgroup consisting of translations, rotations, and dilations. \\
+
+\subsubsection*{Example: Three-Point Correlation}
+
+\noindent Following similar procedure as in the two-point case, translations, rotations, and dilations lead to conclusion that the three-point correlation function must have the form
+
+\begin{equation}
+\bra{0} \phi_1 (x_1) \phi_2 (x_2) \phi_3 (x_3) \ket{0} = \sum_{a,b,c} \frac{c_{abc}}{r_{12}^a r_{23}^b r_{31}^c}
+\end{equation}
+
+\noindent Where the summation is constrained by the field scaling dimensions to satisfy $a+b+c = \Delta_1 + \Delta_2 + \Delta_3$. \\
+
+\noindent Special conformal transformations further constrain the exponents in the power law to (\textbf{Exercise})
+
+\begin{equation}
+a = \Delta_1 + \Delta_2 - \Delta_3, \,\,\,\, b = -\Delta_1 + \Delta_2 + \Delta_3, \,\,\,\, c = \Delta_1 - \Delta_2 + \Delta_3.
+\end{equation}
+
+\noindent And the three-point correlation function has the form
+
+\begin{equation}
+\bra{0} \phi_1 (x_1) \phi_2 (x_2) \phi_3 (x_3) \ket{0} = \frac{c_{123}}{r_{12}^{\Delta_1 + \Delta_2 - \Delta_3} r_{23}^{-\Delta_1 + \Delta_2 + \Delta_3} r_{31}^{\Delta_1 - \Delta_2 + \Delta_3}}.
+\end{equation}
+
+\subsubsection*{Example: Four-Point Correlation}
+
+\noindent The four-point correlation function has the form
+
+\begin{equation}
+\bra{0} \phi_1 (x_1) \phi_2 (x_2) \phi_3 (x_3) \phi_4 (x_4) \ket{0} = F \left( \frac{r_{12} r_{34}}{r_{13} r_{24}}, \frac{r_{13} r_{24}}{r_{23} r_{14}} \right) \prod_{j<k} r_{jk}^{-\Delta_j - \Delta_k + \frac{\Delta}{3}}
+\end{equation}
+
+\noindent Where $F(\cdot,\cdot)$ is an arbitrary function of the cross products and $\Delta = \sum_j \Delta_j$.
+
+\subsection*{Conformal Theory in $(2+0)$ Dimensions}
+
+\noindent Thus far, we have been studying the structure of conformal theories in arbitrary spacetime dimension $d$. In $(2+0)$ dimensions, conformal theories will take on a new definition. \\
+
+\noindent Recall that we defined the complex fields $z = x_1 + i x_2$ and $\bar{z} = x_1 - i x_2$, and made the assumption that we can \textit{analytically continue} to arbitrary, independent $z$ and $\bar{z}$, such that
+
+\begin{equation}
+\Phi(x_1,x_2) = \Phi(z,\bar{z})
+\end{equation}
+
+\noindent And work out the consequences from there. We now extend our definition of quasi-primary fields, by analogy to the general, arbitrary dimension case. We will now refer to these fields as \textit{primary fields} of type, or conformal weight, $(h, \bar{h})$ with the proposed form
+
+\begin{equation}
+\Phi (z, \bar{z}) = \left( \frac{\partial f}{\partial z} \right)^h \left( \frac{\partial \bar{f}}{\partial \bar{z}} \right)^{\bar{h}} \Phi (f(z), \bar{f} (\bar{z})).
+\end{equation}
+
+\noindent Note here that there are indeed enough examples of primary fields of conformal field theories to make these assumptions interesting to study. \\
+
+\noindent Expand the primary field infinitesimally, as it is the more convenient method opposed to working with the full global transformation, by sending $z \rightarrow z + \epsilon(z)$, and complex conjugate, to order $\epsilon$
+
+\begin{equation}
+\delta_{\epsilon, \bar{\epsilon}} \Phi (z, \bar{z}) = ((h \partial_z \epsilon(z) + \epsilon (z) \partial_z ) + (\bar{h} \partial_{\bar{z}} \bar{\epsilon}(\bar{z}) + \bar{\epsilon} (\bar{z}) \partial_{\bar{z}} )) \Phi(z, \bar{z}).
+\end{equation}
+
+\noindent And write the two-point correlation function as
+
+\begin{equation}
+G^{(2)} (\underline{z}, \bar{\underline{z}}) = \bra{0} \Phi_1 (z_1, \bar{z}_1) \Phi_2 (z_2, \bar{z}_2) \ket{0}
+\end{equation}
+
+\noindent Where $\underline{z} \equiv (z_1, z_2)$ and $\underline{\bar{z}} \equiv (\bar{z}_1, \bar{z}_2)$. \\
+
+\noindent Applying the infinitesimal equation for $\delta_{\epsilon, \bar{\epsilon}} \Phi (z, \bar{z})$ from above, and setting equal to zero by conformal invariance to order $\epsilon$, we get
+
+\begin{equation}
+\delta_{\epsilon, \bar{\epsilon}} G^{(2)} (\underline{z}, \underline{\bar{z}}) = \bra{0} \delta_{\epsilon, \bar{\epsilon}} \Phi_1 \Phi_2 \ket{0} + \bra{0} \Phi_1 \delta_{\epsilon, \bar{\epsilon}} \Phi_2 \ket{0} = 0.
+\end{equation}
+
+\noindent From here, as before in the arbitrary dimension case, we can work out the constraints of each type of conformal transformation on the correlation function. \\
+
+\noindent \textbf{Translation}: 
+
+\begin{equation}
+\epsilon(z) = \epsilon \implies G^{(2)}(\underline{z}, \underline{\bar{z}}) \propto z_{12} = z_1 - z_2 \text{ and }\bar{z_{12}} = \bar{z}_1 - \bar{z}_2.
+\end{equation}
+
+\noindent \textbf{Rotation \& Dilation}: 
+
+\begin{equation}
+\epsilon (z) = \epsilon z \implies G^{(2)}(\underline{z}, \underline{\bar{z}}) = \frac{c_{12}}{z_{12}^{h_1 + h_2} \bar{z}_{12}^{\bar{h}_1 + \bar{h}_2}}.
+\end{equation}
+
+\noindent \textbf{SCT}: 
+
+\begin{equation}
+\epsilon (z) = z^2 \implies G^{(2)}(\underline{z}, \underline{\bar{z}}) = \frac{c_{12}}{z_{12}^{2h} \bar{z}_{12}^{2\bar{h}}}.
+\end{equation}
+
+\noindent Now, for example, suppose we have a bosonic field which applies the constraint $h-\bar{h}=0$ to the conformal weights. Setting $h+\bar{h} = \Delta$, the analytically continued two-point correlation function for the bosonic field becomes
+
+\begin{equation}
+G^{(2)}(\underline{z}, \underline{\bar{z}}) = \frac{c_{12}}{|z_{12}|^{2\Delta}}.
+\end{equation}
+
+\subsubsection*{Example: Three-Point Correlation}
+
+\noindent Similarly, the three-point correlation function has the form
+
+\begin{equation}
+G^{(3)} (\underline{z}, \underline{\bar{z}}) = c_{123} \frac{1}{z_{12}^{h_1+h_2-h_3} z_{23}^{-h_1+h_2+h_3} z_{31}^{h_1-h_2+h_3}} \frac{1}{\bar{z}_{12}^{h_1+h_2-h_3} \bar{z}_{23}^{-h_1+h_2+h_3} \bar{z}_{31}^{h_1-h_2+h_3}}
+\end{equation}
+
+\noindent In summary, we have introduced what we consider quantum field theories and have analyzed the consequences of conformal invariance of these quantum theories. We have also analyzed subclasses of theories that obey additional constraints (e.g., $\Delta = h + \bar{h}$ is real).
