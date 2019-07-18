@@ -133,16 +133,22 @@ z = e^{\sigma^1 + i \sigma^0} \text{ and } \bar{z} = e^{\sigma^1 - i \sigma^0}.
 \bra{0} \underline{\hat{\phi}} (\underline{x}_1) \dots \underline{\hat{\phi}} (\underline{x}_n) \ket{0} = \lim_{T \rightarrow \infty(1-i\epsilon)} \frac{\int \mathcal{D}\phi \, \phi (\underline{x}_1) \dots \phi (\underline{x}_n) e^{iS[\underline{\phi}]}}{\int \mathcal{D} \phi \, e^{i S[\underline{\phi}]}}.
 \end{equation}
 
-\noindent The first step is to change variables $\underline{\phi} \rightarrow \underline{\phi}'$ and assume that the measure is invariant $\mathcal{D}\phi' = \mathcal{D}\phi$. Consider the expectation value of $x$
+\noindent The first step is to change variables $\underline{\phi} \rightarrow \underline{\phi}'$ and assume that the measure is invariant $\mathcal{D}\phi' = \mathcal{D}\phi$. Define the operator $\hat{X}$ to be the time-ordered product of quantum fields
 
 \begin{equation}
-\langle \hat{x} \rangle = \frac{\int \mathcal{D} \phi' \, \left( \underline{\hat{\phi}} (\underline{x}_1) \dots \underline{\hat{\phi}} (\underline{x}_n) + i \omega_a (\underline{x}) \textbf{G}_a (\underline{\hat{\phi}} (\underline{x}_1) \dots \underline{\hat{\phi}} (\underline{x}_n) + \dots \right) e^{i (S + \int dx \, \partial_\mu j_a^\mu \omega_a (\underline{x}))}}{\int \mathcal{D}\phi \, e^{iS}}.
+\hat{X} = \mathcal{T} [ \underline{\hat{\phi}} (\underline{x}_1) \dots \underline{\hat{\phi}} (\underline{x}_n)].
+\end{equation}
+
+\noindent Note that the time-ordering will be assumed from here on, and consider the expectation value of $\hat{X}$ in the path integral prescription
+
+\begin{equation}
+\langle \hat{X} \rangle = \frac{\int \mathcal{D} \phi' \, \left( \underline{\hat{\phi}} (\underline{x}_1) \dots \underline{\hat{\phi}} (\underline{x}_n) + i \omega_a (\underline{x}) \textbf{G}_a (\underline{\hat{\phi}} (\underline{x}_1) \dots \underline{\hat{\phi}} (\underline{x}_n) + \dots \right) e^{i (S + \int dx \, \partial_\mu j_a^\mu \omega_a (\underline{x}))}}{\int \mathcal{D}\phi \, e^{iS}}.
 \end{equation}
 
 \noindent To zeroth order in $\omega_a$, this is exactly the correlation function prior to the change of variables. To first order in $\omega_a$, we get the equality for quantum fields
 
 \begin{equation}
-\frac{\partial}{\partial x^\mu} \langle \hat{j}_a^\mu (\underline{x}) \hat{\phi} (\underline{x}_1) \dots \hat{\phi} (\underline{x}_n) \rangle = -i \sum_{j=1}^{n} \delta(\underline{x} - \underline{x}_j) \langle \hat{\phi} (\underline{x}_1) \dots \textbf{G}_a \hat{\phi} (\underline{x}_j) \dots \hat{\phi} (\underline{x}_n) \rangle.
+\frac{\partial}{\partial x^\mu} \langle \hat{j}_a^\mu (\underline{x}) \hat{\phi} (\underline{x}_1) \dots \hat{\phi} (\underline{x}_n) \rangle = -i \sum_{j=1}^{n} \delta(\underline{x} - \underline{x}_j) \langle \hat{\phi} (\underline{x}_1) \dots \textbf{G}_a \hat{\phi} \left( \underline{x}_j) \dots \hat{\phi} (\underline{x}_n) \right)\rangle.
 \end{equation}
 
 \noindent The generator of symmetry $\hat{j}_a^\mu (\underline{x})$ is handed over by the oath integral approach.
