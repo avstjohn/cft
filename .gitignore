@@ -1,4 +1,4 @@
 *.aux
 *.log
 *.synctex.gz
-*.DS_Store
+.DS_Store
