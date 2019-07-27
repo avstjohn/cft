@@ -1,0 +1,156 @@
+
+\noindent Suppose we have a quantum theory with a set of observables in the linear operator space of a Hilbert space $\mathcal{O} \subset \mathcal{L}(\mathcal{H})$, and a field theory with a subset of field operators $\mathcal{F} \subset \mathcal{O}$, where the fields are labelled by position and spin, for example, $\hat{\phi}_{x, \alpha} \in \mathcal{F}$. This turns into a quantum field theory when we have symmetries that act on the field observables. For example, the symmetry of translation invariance in an expectation value has the form
+
+\begin{align}
+\bra{A} \hat{\phi}_{x+\epsilon, \alpha} \ket{B} &= f(x+\epsilon, \alpha; \ket{A}, \ket{B}) \\
+&= f(x, \alpha; \ket{A}, \ket{B}) + \epsilon \frac{\partial f}{\partial x} + \mathcal{O}(\epsilon^2).
+\end{align}
+
+\noindent Note that $\hat{\phi}_{x, \alpha}$ is an operator-valued distribution (like a delta function whose values are operators, not numbers) and is not mathematically well-defined outside of the expectation value. This equality should be true for all ``nice'' $\ket{A}$ and $\ket{B}$. \\
+
+\noindent Notationally, we express the above as (omitting the expectation value)
+
+\begin{equation}
+\hat{\phi}_{x+\epsilon, \alpha} = \hat{\phi}_{x, \alpha} + \epsilon \partial_x \hat{\phi}_{x, \alpha}.
+\end{equation}
+
+\noindent Translation invariance, acting on spacetime four-vectors, also includes time translation invariance. If $\epsilon = (\epsilon, 0, 0, 0)$, then
+
+\begin{equation}
+\hat{\phi}_{x+\epsilon, \alpha} = \hat{\phi}_{x, \alpha} + \epsilon \partial_t \hat{\phi}_{x, \alpha}.
+\end{equation}
+
+\noindent As symmetries, the translation transformation vector acts on unitaries of the Hilbert space
+
+\begin{equation}
+U(\epsilon) = e^{-i\epsilon \cdot \hat{P}} \text{, where } \hat{P} = (\hat{H}, \hat{P}_x, \hat{P}_y, \hat{P}_z).
+\end{equation}
+
+\noindent In the Heisenberg picture, we can write the time translation transformation (time evolution) in another way with commutator brackets
+
+\begin{equation}
+\hat{\phi}_{x+\epsilon, \alpha} = U^\dagger (\epsilon) \hat{\phi}_{x, \alpha} U(\epsilon) = \hat{\phi}_{x, \alpha} + i [\epsilon^\mu \hat{P}_\mu, \hat{\phi}_{x, \alpha}].
+\end{equation}
+
+\noindent So, these are two ways to carry out the symmetry transformation, and the Ward identity gives us a way to connect them, inside correlation functions, show that they are equivalent, and then calculate the generators from the path integral prescription. Comparing the results of the last lecture, for time translation invariance
+
+\begin{equation}
+[\hat{Q}_a, \hat{\phi}] = -i G_a \hat{\phi} \equiv[\hat{H}, \hat{\phi}_{x, \alpha}] = -i \partial_t \hat{\phi}_{x,\alpha}.
+\end{equation}
+
+\noindent Recall from the last lecture, that we derived the Ward identity for conformal transformations
+
+\begin{align}
+&\textbf{Translation: } &\partial_\mu \langle \hat{T}^\mu_\nu \hat{X} \rangle = -i \sum_j \delta(x-x_j) \partial_{x_j^\nu} \langle \hat{X} \rangle \\
+&\textbf{Rotation: } &\langle (\hat{T}^{\rho\nu} - \hat{T}^{\nu\rho} ) \hat{X} \rangle = -i \sum_j \delta(x-x_j) s_j^{\nu\rho} \langle \hat{X} \rangle \\
+&\textbf{Dilation: } &\langle \hat{T}^\mu_\mu \hat{X} \rangle = - \sum_j \delta(x-x_j) \Delta_j \langle \hat{X} \rangle.
+\end{align}
+
+\noindent We noted that although the stress-energy tensor is classically traceless $T^\mu_\mu = 0$, yielding a zero vacuum expectation value, it is not necessarily traceless quantumly $\hat{T}^\mu_\mu \ne 0$, but there is the fact that
+
+\begin{equation}
+\bra{0} \hat{T}_\mu^\mu (x) \hat{T}^\mu_\mu (0) \ket{0} = 0.
+\end{equation}
+
+\subsection*{Ward Identities in $(2+0)d$ and Complex Coordinates}
+
+\noindent Our task today, is to specialize to $(2+0)d$ in complex coordinates $ds^2 = dx^2 + dy^2 = dz d\bar{z}$, since
+
+\begin{align}
+ds^2 &= g_{zz} dz dz + g_{z \bar{z}} dz d\bar{z} + g_{\bar{z} z} d\bar{z} dz + g_{\bar{z} \bar{z}} d\bar{z} d\bar{z} \\
+&= 0 \cdot dz dz + \frac{1}{2} \cdot dz d\bar{z} + \frac{1}{2} \cdot d\bar{z} dz + 0 \cdot d\bar{z} d\bar{z} = dz d\bar{z}.
+\end{align}
+
+\noindent Vector quantities transform into complex coordinates as 
+
+\begin{equation}
+F = F^x \partial_x + F^y \partial_y = F^z \partial_z + F^{\bar{z}} \partial_{\bar{z}}
+\end{equation}
+
+\noindent Where  $F^z = F^x + i F^y$ and $F^{\bar{z}} = F^x - i F^y$. \\
+
+\noindent So, elements of the stress-energy tensor transform as $T_{\mu\nu} dx^\mu dx^\nu \rightarrow T_{\mu\nu} dz^\mu d\bar{z}^\nu$, where
+
+\begin{align}
+T_{zz} &= \frac{1}{4} (T_{xx} - 2 i T_{xy} - T_{yy}) \\ 
+T_{\bar{z}\bar{z}} &= \frac{1}{4} (T_{xx} + 2 i T_{xy} - T_{yy}) \\
+T_{z \bar{z}} &= T_{\bar{z} z} = \frac{1}{4} (T_{xx} + T_{yy}).
+\end{align}
+
+\noindent And the Ward identities in the complex coordinates are
+
+\begin{align}
+&\textbf{Translation, holomorphic: } \\
+& 2\pi \partial_z \langle \hat{T}_{\bar{z}z} \hat{X} \rangle + 2\pi \partial_{\bar{z}} \langle \hat{T}_{zz} \hat{X} \rangle = -\sum_{j=1}^n \partial_{\bar{z}} \left( \frac{1}{z-w_j} \right) \partial_{w_j} \langle \hat{X} \rangle \\
+&\textbf{Translation, anti-holomorphic: } \\
+& 2\pi \partial_z \langle \hat{T}_{\bar{z} \bar{z}} \hat{X} \rangle + 2\pi \partial_{\bar{z}} \langle \hat{T}_{z \bar{z}} \hat{X} \rangle = -\sum_{j=1}^n \partial_z \left( \frac{1}{\bar{z} - \bar{w}_j} \right) \partial_{\bar{w}_j} \langle \hat{X} \rangle \\
+&\textbf{Rotation: } \\
+& -2\pi \langle \hat{T}_{z \bar{z}} \hat{X} \rangle + 2\pi \langle \hat{T}_{\bar{z}z} \hat{X} \rangle =  -\sum_{j=1}^n \partial_{\bar{z}} \left( \frac{1}{z-w_j} \right) s_j \langle \hat{X} \rangle \\
+&\textbf{Dilation: } \\
+& 2\pi \langle \hat{T}_{z \bar{z}} \hat{X} \rangle + 2\pi \langle \hat{T}_{\bar{z}z} \hat{X} \rangle =  -\sum_{j=1}^n \partial_{\bar{z}} \left( \frac{1}{z-w_j} \right) \Delta_j \langle \hat{X} \rangle
+\end{align}
+
+\noindent Where we used the identity $\delta(x) = \frac{1}{\pi} \partial_{\bar{z}} \left( \frac{1}{z} \right)$ and $w_j = x_j + i y_j$ is a complex number. \\
+
+\noindent \textbf{Digression}: The delta function identity used above is a consequence of Gauss' theorem. \\
+
+\begin{equation}
+\int_\mathcal{M} d^2 x \, \partial_\mu F^\mu = \int_{\partial \mathcal{M}} d \xi_\mu F^\mu = \frac{i}{2} \oint_{\partial \mathcal{M}} \, (-dz F^{\bar{z}} + d\bar{z} F^z)
+\end{equation}
+
+\noindent Where the last equality is gotten by integration by parts, applying Guass' theorem, and the identity from residue calculus $\int_{\mathcal{M}} d^2 x \, \delta (x) f (x) = f(0)$. \\
+
+\noindent Add and subtract the Ward identities for \textbf{rotation} and \textbf{dilation} and substitute them into the \textbf{holomorphic} and \textbf{antiholomorphic translation} Ward identities to get a more compact form which only includes diagonal elements of the stress-energy tensor
+
+\begin{align}
+&\textbf{Holomorphic: } \\
+& \partial_{\bar{z}} \left( \langle \hat{T} (z, \bar{z}) \hat{X} \rangle - \sum_j \left( \frac{1}{z-w_j} \partial_{w_j} \langle \hat{X} \rangle + \frac{h_j}{(z-w_j)^2} \langle \hat{X} \rangle \right) \right) = 0 \\
+&\textbf{Anti-holomorphic: } \\
+& \partial_z \left( \langle \hat{\bar{T}} (z, \bar{z}) \hat{X} \rangle - \sum_j \left( \frac{1}{\bar{z}-\bar{w}_j} \partial_{\bar{w}_j} \langle \hat{X} \rangle + \frac{h_j}{(\bar{z}-\bar{w}_j)^2} \langle \hat{X} \rangle \right) \right) = 0 \\
+\end{align}
+
+\noindent Where, notationally, we have written $\hat{T}(z,\bar{z}) = -2\pi \hat{T}_{zz}$ and $\hat{\bar{T}}(z,\bar{z}) = -2\pi \hat{T}_{\bar{z} \bar{z}}$. We've also used the definition of the conformal weights for the scaling dimension $\Delta_j = h_j + \bar{h}_j$ and the spin $s_j = h_j - \bar{h}_j$. \\
+
+\noindent From these equalities, fropping $\hat{T}(z,\bar{z}) = \hat{T}(z)$, and similiarly for the anti-holomorphic equality, we derive that
+
+\begin{align}
+\langle \hat{T} (z) \hat{X} \rangle &= \sum_j \left( \frac{1}{z-w_j} \partial_{w_j} \langle \hat{X} \rangle + \frac{h_j}{(z-w_j)^2} \langle \hat{X} \rangle \right) + \left( \text{regular functions of } z \right) \\
+\langle \hat{\bar{T}} (\bar{z}) \hat{X} \rangle &= \sum_j \left( \frac{1}{\bar{z}-\bar{w}_j} \partial_{\bar{w}_j} \langle \hat{X} \rangle + \frac{h_j}{(\bar{z}-\bar{w}_j)^2} \langle \hat{X} \rangle \right) + \left( \text{regular functions of } \bar{z} \right).
+\end{align}
+
+\noindent Note that the off-diagonal elements such as $\hat{T}_{z\bar{z}} = \hat{T}^x_{\,\,x} + \hat{T}^y_{\,\,y}$ and $\hat{T}_{\bar{z}z}$ are nonzero, but are not present in these equations. \\
+
+\noindent Under an infinitesimal conformal transformation $x \rightarrow x+\epsilon$, all Ward identities are contained in the expression
+
+\begin{equation}
+\delta_{\epsilon, \bar{\epsilon}} \langle \hat{X} \rangle = \int_\mathcal{M} d^2 x \, \partial_\mu \langle \hat{T}^{\mu\nu} (x) \epsilon_\nu (x) \hat{X} \rangle.
+\end{equation}
+
+\noindent To see this, use the fact that for an infinitesimal conformal transformation, recall $\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu = \frac{2}{d} (\partial\cdot \epsilon) \eta_{\mu\nu}$, which yields the two conditions
+
+\begin{align}
+\partial_\mu \epsilon_\nu + \partial_\nu \epsilon_\mu &= \partial_\rho \epsilon^\rho \eta_{\mu\nu} \\
+\partial_\mu \epsilon_\nu - \partial_\nu \epsilon_\mu &= \epsilon^{\alpha \beta} \partial_\alpha \epsilon_\beta.
+\end{align}
+
+\noindent Then integrate $\partial_\mu (\epsilon_\nu T^{\mu\nu})$ and use Gauss' theorem to get the integrated for of the Ward identity
+
+\begin{equation}
+\delta_{\epsilon, \bar{\epsilon}} = \frac{1}{2} i \oint_C \left( -dz \langle \hat{T}^{\bar{z} \bar{z}} \epsilon_{\bar{z}} \hat{X} \rangle + d\bar{z} \langle \hat{T}^{zz} \epsilon_z \hat{X} \rangle \right).
+\end{equation}
+
+\noindent Where do we get expressions such as $\langle \hat{X} \rangle = \langle \hat{\phi} (x_1) \dots \hat{\phi} (x_n)$? \\
+
+\noindent We get them from path integrals in Euclidean space (imaginary time). A correlator in Euclidean space is given by 
+
+\begin{equation}
+\langle \hat{A}_1 (x_1, i\beta_1) \dots \hat{A}_n (x_n, i\beta_n) \rangle = \langle \hat{A}_1 (x_1, 0) e^{-\hat{H}(\beta_1 - \beta_2)} \dots e^{-\hat{H}(\beta_{n-1} - \beta_n)} \hat{A}_n(x_n, 0) \rangle
+\end{equation}
+
+\noindent Where $\beta_j > \beta_{j-1}$ and the path integral obeys time ordering. \\
+
+\noindent Substitute $\hat{\phi}_j = \hat{A}_j (x_j, i\beta_j)$, and then the path integral refelcts symmetries of Euclidean space, rather than Minkowski space, and the symmetries are implemented non-unitarily. E.g., for rotations with $t \rightarrow i\beta$,
+
+\begin{equation}
+\partial_\mu \phi \partial^\mu \phi = \partial_t \phi \partial_t \phi + \partial_x \phi \partial_x \phi = \partial_\beta \phi \partial_\beta \phi + \partial_x \phi \partial_x \phi.
+\end{equation}
