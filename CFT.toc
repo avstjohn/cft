@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Lecture 1: Introduction to Conformal Field Theory}{3}
+\contentsline {section}{\numberline {2}Lecture 2: Local Conformal Transformations}{9}
+\contentsline {section}{\numberline {3}Lecture 3: Classical Conformal Field Theory}{15}
+\contentsline {section}{\numberline {4}Lecture 4: Constraints of Conformal Invariance on Quantum Field Theories}{21}
+\contentsline {section}{\numberline {5}Lecture 5: \\ Quantum CFT: Ward Identities \& Radial Quantization}{27}
+\contentsline {section}{\numberline {6}Lecture 6: Ward Identities}{32}
+\contentsline {section}{\numberline {7}Lecture 7: Ward Identities in $(2+0)d$ and Radial Quantization}{37}
+\contentsline {section}{\numberline {8}Lecture 8: Radial Quantization and the OPE}{42}
+\contentsline {section}{\numberline {9}Lecture 9: The Free Boson}{46}
+\contentsline {section}{\numberline {10}Lecture 10: The Hilbert Space of CFT}{51}

@@ -1,0 +1,238 @@
+
+\noindent A Hilbert space is a vector space $\mathcal{H}$ with an inner product $\langle | \rangle$ which induces a topology such that $\mathcal{H}$ is complete with respect to $\langle | \rangle$. \\
+
+\noindent How do we attach a Hilbert space to a conformal field theory? \\
+
+\noindent In other words: ``What are the states?'', ``What do the statees correspond to?'', ``What are the observables and what do they correspond to?'', ``How do symmetries act on the Hilbert space (presumably unitarily)?''. \\
+
+\noindent We can use Wightman functions to build $\mathcal{H}$ for ``good'' quantum field theories. By ``good'', we mean that if we take data, namely $n$-point correlation functions, from a QFT and use them to build a (linear) vector space with an inner product, then we would eventually find out that we actually have a Hilbert space. \\
+
+\noindent The \textit{Wightman functions} are defined by
+
+\begin{equation}
+w_n \equiv \bra{0} \hat{\phi}_1 (x_1) \dots \hat{\phi} (x_n) \ket{0}.
+\end{equation}
+
+\noindent And define the ket vector by fields operating on the vacuum state
+
+\begin{equation}
+\ket{x_1 \dots x_n} \equiv \hat{\phi} (x_1) \dots \hat{\phi} (x_n) \ket{0}
+\end{equation}
+
+\noindent Such that the inner product, assuming the fields are self-adjoint distribution-valued objects, is
+
+\begin{equation}
+\braket{x_1 \dots x_n | y_1 \dots y_m } = \bra{0} \hat{\phi} (x_1) \dots \hat{\phi} (x_n)  \hat{\phi} (y_1) \dots \hat{\phi} (y_m) \ket{0}.
+\end{equation}
+
+\noindent So, we actually use the Wightman functions $w_n (x_1, \dots, x_n ; y_1, \dots, y_m)$ as ``smeared out'' versions of the operator products $\hat{\phi} (x_1) \dots \hat{\phi} (x_n)  \hat{\phi} (y_1) \dots \hat{\phi} (y_m)$, and define $f$ and $g$ as \textit{smearing functions}, with the inner product
+
+\begin{equation}
+\braket{ f_1 \dots f_n | g_1 \dots g_m } = \int dx_1 \dots dx_n dy_1 \dots dy_m \,\, \bar{f} (x_1) \dots \bar{f} (x_n) g(y_1) \dots g(y_m) w(x_1, \dots, x_n ; y_1, \dots, y_m).
+\end{equation}
+
+\noindent This is roughly what is happening in today's argument. \\
+
+\noindent So, we first denote the vacuum state of a conformal field theory by $\ket{0}$, and then associate higher states with operators. \\
+
+\noindent \textbf{Digression: Quantum Information Theory} \\
+
+\noindent Suppose we have the $d$-dimensional complex numbers as a Hilbert space $\mathcal{H} = \mathbb{C}^d$ and $d \times d$ matrices as operators on the space $A \in \mathcal{B} (\mathcal{H})$. Then we can associate a quantum state in $\mathcal{H} \otimes \mathcal{H}$ to $A$ via the maximally entangled state
+
+\begin{equation}
+\ket{\Phi^+} = \sum_{j=1}^d \frac{1}{\sqrt{d}} \ket{jj} \text{ and } \ket{A} \equiv (A \otimes \mathbb{I}) \ket{\Phi^+}.
+\end{equation}
+
+\noindent \textbf{End Digression.} \\
+
+\noindent Let $\hat{A} (z, \bar{z})$ be a field associated to the ``in'' state
+
+\begin{align}
+\ket{A_{in}} &\equiv \lim_{\sigma^0 \rightarrow -\infty} \hat{A} (\sigma^0, \sigma^1) \ket{0} \\
+&= \lim_{\sigma^0 \rightarrow -\infty} e^{\sigma^0 \hat{H}} \hat{A} (0, \sigma^1) \ket{0} \\
+&= \lim_{z, \bar{z} \rightarrow 0} \hat{A} (z, \bar{z}) \ket{0}.
+\end{align}
+
+\noindent Since we compactified space (to the Riemann sphere), all points at infinity are the same point, and a single state coming from $-\infty$ can be associated to the operator $\hat{A}$. \\
+
+\noindent Now identify an ``out'' state, as dual to the ``in'' state, as a bra vector
+
+\begin{equation}
+\bra{A_{out}} \equiv \lim_{w,\bar{w} \rightarrow 0} \bra{0} \hat{\tilde{A}} (w,\bar{w})
+\end{equation}
+
+\noindent Where $w=\frac{1}{z}$ is a conformal transformation of the complex coordinates ($z=0 \rightarrow w=\infty$), and the tilde operator is the conformally transformed operator with some multiplicative factors $\hat{\tilde{A}} (w,\bar{w}) = \dots \hat{A} (z, \bar{z})$. \\
+
+\noindent For a primary field $\hat{A} (z, \bar{z}) = \hat{\phi} (z, \bar{z})$, recall that we have the transformation law
+
+\begin{equation}
+f: \,\,\,\, \hat{\phi} (w, \bar{w}) \rightarrow \hat{\phi} (f(w), \bar{f} (\bar{w})) (\partial_w f(w))^h (\partial_{\bar{w}} \bar{f} (\bar{w}))^{\bar{h}}.
+\end{equation}
+
+\noindent So, the ``out'' state for a primary field looks like
+
+\begin{align}
+\bra{\phi_{out}} &= \lim_{a,\bar{z} \rightarrow 0} \bra{0} \hat{\phi} \left( \frac{1}{z}, \frac{1}{\bar{z}} \right) \frac{1}{z^{2h}} \frac{1}{\bar{z}^{2\bar{h}}} \\
+&\equiv \lim_{a,\bar{z} \rightarrow 0} \bra{0} \hat{\phi} (\bar{z}, z)^\dagger \\
+&= \left( \lim_{a,\bar{z} \rightarrow 0} \hat{\phi} (\bar{z}, z) \ket{0} \right)^\dagger \\
+\bra{\phi}_{out} &= (\ket{\phi_{in}})^\dagger
+\end{align}
+
+\noindent Where we defined the adjoint in the second line with the factors, and define the dual states. \\
+
+\noindent Using these definitions, we get the inner product
+
+\begin{align}
+\braket{\phi_{out} | \phi_{in}} &= \lim_{z,\bar{z}, w,\bar{w} \rightarrow 0} \bra{0} \hat{\phi} (z, \bar{z})^\dagger \hat{\phi} (w, \bar{w}) \ket{0} \\
+&= \lim_{z,\bar{z}, w,\bar{w} \rightarrow 0}  \bar{z}^{-2h} z^{-2\bar{h}} \bra{0} \hat{\phi} \left( \frac{1}{\bar{z}}, \frac{1}{z} \right)  \hat{\phi} (w, \bar{w}) \ket{0} \\
+&= \lim_{\xi, \bar{\xi} \rightarrow 0} \bar{\xi}^{2h} \xi^{2\bar{h}} \bra{0} \hat{\phi} (\bar{\xi}, \xi) \hat{\phi} (0,0) \ket{0}
+\end{align}
+
+\noindent Where we have sent $w, \bar{w} \rightarrow 0$ and set $\xi = \frac{1}{z}$ and $\bar{\xi} = \frac{1}{\bar{z}}$. This is because we have a formula for this correlation function, and it is independent of spacetime location $\xi$. \\
+
+\noindent Morally, we can think of the vacuum state $\ket{0}$ as being like an entangled state, a bipartite state of an operator and its adjoint $\ket{\Phi^+}_{A\bar{A}}$, between the degrees of freedom at $-\infty$ and $\infty$. Then the ``in'' and ``out'' states can be thought of as
+
+\begin{align}
+\ket{A_{in}} &\rightarrow \hat{A} \otimes \mathbb{I} \ket{\Phi^+} \\
+\ket{A_{out}} &\rightarrow \mathbb{I} \otimes \hat{\bar{A}} \ket{\Phi^+} .
+\end{align}
+
+\subsection*{Hilbert Space of CFT}
+
+\noindent Now, let's build out the states to occupy the Hilbert space of our conformal field theory. \\
+
+\noindent We have worked out the operators that correspond to global conformal transformations and form a $SL(2,\mathbb{C})$ subalgebra : $\{\hat{L}_{-1}, \hat{L}_0, \hat{L}_1 \}$. Note that the stress-energy, or energy-momentum, tensor generates spacetime deformations and these three operators are the global conformal transformations in infinitesimal form. \\
+
+\noindent First, we must ensure that the vacuum state is invariant under $SL(2,\mathbb{C})$ by demanding that $\hat{T} (z) \ket{0}$ and $\hat{\bar{T}} (\bar{z}) \ket{0}$ are regular as $z,\bar{z} \rightarrow 0$. This requires that
+
+\begin{align}
+\hat{T} (z) \ket{0} = \sum_{n \in \mathbb{Z}} \,\, \hat{L}_n z^{-n-2} \ket{0} &\implies \hat{L}_n \ket{0} = 0, \,\, \forall \,\, n \ge -1 \\
+&\,\,\,\,\, \text{and } \hat{\bar{L}}_n \ket{0} = 0, \,\, \forall \,\, n \ge -1.
+\end{align}
+
+\noindent Otherwise, the stress-energy tensor acting on the vacuum blows up as $z \rightarrow 0$. So, we have found that our subalgebra annihilates the vacuum. In other words, the vacuum state is invariant under global conformation transformations, the Virasoro generators, such that
+
+\begin{equation}
+\hat{L}_{-1} \ket{0} = \hat{L}_0 \ket{0} = \hat{L}_1 \ket{0} = 0.
+\end{equation}
+
+\noindent Now we wil use the OPE to show that the primary fields, our ``in'' states, are eigenstates of the Hamiltonian $\hat{H} = \hat{L}_0 + \hat{\bar{L}}_0$. Consider the commutator
+
+\begin{align}
+[ \hat{L}_n, \hat{\phi} (w, \bar{w}) ] &= \frac{1}{2 \pi i} \oint_W dz \,\, z^{n+1} \hat{T} (z) \hat{\phi} (w, \bar{w}) \\
+&= \frac{1}{2 \pi i} \oint_W dz \,\, z^{n+1} \left( \frac{h}{(z-w)^2} \hat{\phi} (w, \bar{w}) + \frac{1}{z-w} \partial_w \hat{\phi} (w, \bar{w}) + \text{regular} \right) \\
+[ \hat{L}_n, \hat{\phi} (w, \bar{w}) ] &= h (n+1) w^n \hat{\phi} (w, \bar{w}) + w^{n+1} \partial_w \hat{\phi} (w, \bar{w}).
+\end{align}
+
+\noindent Where the contour $W$ is a tight circle around the point $w$, and, since $z \rightarrow w$, we need only to analyze the singular behaviour of this expression, and the regular part is tossed out. \\
+
+\noindent Define the asymptotic ``in'' state by the conformal weights $h$ and $\bar{h}$
+
+\begin{equation}
+\ket{h,\bar{h}} \equiv \hat{\phi} (0,\bar{0}) \ket{0}.
+\end{equation}
+
+\noindent Then we can work out the eigenvalues of the Virasoro generator by applying the above commutation relation to the defined ``in'' state
+
+\begin{equation}
+\hat{L}_0 \ket{h,\bar{h}} = \hat{L}_0 \hat{\phi} (0,\bar{0}) \ket{0} = [\hat{L}_0, \hat{\phi} (0,\bar{0}) ] \ket{0} = h \ket{h, \bar{h}}.
+\end{equation}
+
+\noindent Similarly for the dual Virasoro generator
+
+\begin{equation}
+\hat{\bar{L}}_0 \ket{h, \bar{h}} = \bar{h} \ket{h, \bar{h}} .
+\end{equation}
+
+\noindent And
+
+\begin{equation}
+\bar{L}_n \ket{h, \bar{h}} = \hat{\bar{L}}_n \ket{h, \bar{h}} = 0, \forall \,\, n>0.
+\end{equation}
+
+\noindent Excited states are created by expanding in Fourier modes of the primary field
+
+\begin{equation}
+\hat{\phi} (z, \bar{z}) = \sum_{m,n \in \mathbb{Z}} \,\, z^{-m+h}  \bar{z}^{-n+\bar{h}} \hat{\phi}_{m,n}.
+\end{equation}
+
+\noindent Inverting this to get
+
+\begin{equation}
+\hat{\phi}_{m,n} = \left(\frac{1}{2\pi i} \oint dz \, z^{m+h+1} \right) \left( \frac{1}{2\pi i} \oint d\bar{z} \, \bar{z}^{n+\bar{h}+1} \right) \hat{\phi} (z, \bar{z}).
+\end{equation}
+
+\noindent Note that on a real surface, $z=\bar{z}$, and $\hat{\phi}^\dagger_{m,n} = \hat{\phi}_{-m,-n}$. \\
+
+\noindent For the ``in'' and ``out'' states to be well-defined, it is required that the modes annihilate the ground state for
+
+\begin{equation}
+\hat{\phi}_{m,n} = 0, \forall \,\, m > -h \text{ and } n >-\bar{h}.
+\end{equation}
+
+\noindent Note that we can drop the dependence on $\bar{z}$, since everything separates and we can reconstruct the $\bar{z}$-dependence from the $z$-dependence, such that
+
+\begin{equation}
+\hat{\phi} (z,\bar{z}) \rightarrow \hat{\phi} (z) = \sum_{n \in \mathbb{Z}} \, z^{-n-h} \hat{\phi}_n.
+\end{equation}
+
+\noindent And define the holomorphic modes by
+
+\begin{equation}
+\hat{\phi}_n \equiv \frac{1}{2\pi i} \oint dz \, z^{n+h-1} \hat{\phi} (z).
+\end{equation}
+
+\noindent Putting this together with the commutator above (of $\hat{L}_n$ and $\hat{\phi}(w,\bar{w})$) we get the commutation relation
+
+\begin{equation}
+[ \hat{L}_n, \hat{\phi}_m ] = (n(h-1)-m) \hat{\phi}_{m+n}.
+\end{equation}
+
+\noindent And we see that these operators act like ladder (raising/lowering) operators. For example, $\hat{\phi}_{-m}$ increases the conformal dimension by $m$. It is worth noting that $\hat{L}_{-m}$ also raises the conformal dimension
+
+\begin{equation}
+[ \hat{L}_0, \hat{L}_{-m} ] = m \hat{L}_{-m}.
+\end{equation}
+
+\noindent Now, we can apply these modes to the vacuum and build a big, intricate Hilbert space with vectors for each mode and inner products, but we'll just focus on the states constructed by applying $\hat{L}_n$ to the primary fields (``in'' state), and build a subspace that is invariant under global conformal transformations. \\
+
+\noindent Let $\ket{h, \bar{h}} = \hat{\phi} (0, \bar{0}) \ket{0}$ be an asymptotic ``in'' state, and define for negative indices the \textit{descendant fields}
+
+\begin{equation}
+\hat{L}_{-k_1} \dots \hat{L}_{-k_n} \ket{h}, \text{where } 1 \le k_1 \le \dots \le k_n.
+\end{equation}
+
+\noindent Enacting $\hat{L}_0$ on the descendant field yields the eigenvalue $h' = h + k_1 + \dots + k_n \equiv h + N$, where we call $N = \sum_{j=1}^n k_j$ the \textit{level}. \\
+
+\noindent The subspace generated by $\ket{h}$ and the descendant fields forms an irreducible representation, a module, of the Virasoro algebra called a \textit{Verma module}, or \textit{conformal family}, of the primary field. The state $\ket{h}$ behaves as the highest state vector of the Virasoro algebra. \\
+
+\noindent We can work out some of the relationship between the central charge $c$ and the conformal weight $h$ by using a few facts about the Virasoro algebra
+
+\begin{align}
+&\hat{L}_n^\dagger = \hat{L}_{-n}, \\
+&\hat{L}_0 \ket{h} = h \ket{h}, \\
+&\hat{L}_n \ket{h} = 0, \forall \,\, n>0, \\
+&[ \hat{L}_n , \hat{L}_m ] = (n-m) \hat{L}_{m+n} + \frac{c}{12} (n^3 - n) \delta_{m+n,0},
+\end{align}
+
+\noindent And considering the commutator
+
+\begin{align}
+\bra{h} [ \hat{L}_{-n}^\dagger, \hat{L}_{-n} ] \ket{h} &= \bra{h} [ \hat{L}_n, \hat{L}_{-n} ] \ket{h} \\
+&= 2n \bra{h} \hat{L}_0 \ket{h} + \frac{c}{12} (n^3 - n) \braket{h|h} \\
+&= \left( 2nh + \frac{c}{12} (n^3 - n) \right) \braket{h|h}.
+\end{align}
+
+\noindent From this, we observe that as $n \rightarrow \infty$ the only nontrivial representations of the Virasoro algebra are given by $c>0$. \\
+
+\noindent For $n=1$, the only nontrivial representations are given by $h \ge 0$. \\
+
+\noindent If $c=0$ and $h=0$, we get a trivial representation. \\
+
+\noindent For arbitrary $h$, we look at the Gram matrix of $\hat{L}_{-2n} \ket{h}$ and $\hat{L}_{-n} \ket{h}$ and take the determinant
+
+\begin{equation}
+\text{det}(\text{Gram}) = 4n^3 h^2 (4h - 5n).
+\end{equation}
+
+\noindent As $n \rightarrow \infty$, the determinant becomes negative, and yields a trivial representation.
